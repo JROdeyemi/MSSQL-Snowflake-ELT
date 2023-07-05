@@ -1,0 +1,27 @@
+
+
+============================== 2023-07-05 12:08:52.490949 | f76aa183-f02e-44ff-b17f-ef547c781376 ==============================
+[0m12:08:52.490949 [info ] [MainThread]: Running with dbt=1.4.1
+[0m12:08:52.498044 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\USER\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m12:08:52.503196 [debug] [MainThread]: Tracking: tracking
+[0m12:08:52.562614 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002749A243C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002749A2439A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002749A243EE0>]}
+[0m12:09:29.791344 [debug] [MainThread]: Starter project path: C:\Users\USER\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\include\starter_project
+[0m12:36:21.254723 [info ] [MainThread]: Profile Snowflake_datawarehouse written to C:\Users\USER\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m12:36:21.256722 [info ] [MainThread]: 
+Your new dbt project "Snowflake_datawarehouse" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:36:21.259724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002749A243C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002749A293700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002749A2936A0>]}
+[0m12:36:21.261726 [debug] [MainThread]: Flushing usage events
