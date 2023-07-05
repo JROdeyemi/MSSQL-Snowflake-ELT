@@ -25,3 +25,24 @@ Happy modeling!
 
 [0m12:36:21.259724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002749A243C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002749A293700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002749A2936A0>]}
 [0m12:36:21.261726 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-07-05 15:15:44.836861 | b236a6ab-8b66-4959-9536-e0599d45d779 ==============================
+[0m15:15:44.836861 [info ] [MainThread]: Running with dbt=1.4.1
+[0m15:15:44.843177 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\USER\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m15:15:44.846184 [debug] [MainThread]: Tracking: tracking
+[0m15:15:44.851226 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E47033370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E50C86EC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E50C86E60>]}
+[0m15:15:45.096051 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:15:45.096051 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:15:45.099581 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.Snowflake_datawarehouse.example
+[0m15:15:45.112337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b236a6ab-8b66-4959-9536-e0599d45d779', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E51EADD80>]}
+[0m15:15:45.122560 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b236a6ab-8b66-4959-9536-e0599d45d779', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E51E02D40>]}
+[0m15:15:45.122560 [info ] [MainThread]: Found 0 models, 0 tests, 0 snapshots, 0 analyses, 304 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m15:15:45.124839 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b236a6ab-8b66-4959-9536-e0599d45d779', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E47033370>]}
+[0m15:15:45.127800 [info ] [MainThread]: 
+[0m15:15:45.130521 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m15:15:45.131523 [debug] [MainThread]: Command end result
+[0m15:15:45.144813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E51E003D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E51E02AA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022E51E02C80>]}
+[0m15:15:45.145815 [debug] [MainThread]: Flushing usage events
