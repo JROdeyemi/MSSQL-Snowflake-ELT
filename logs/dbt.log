@@ -784,3 +784,286 @@ LEFT JOIN src.countries AS co
 [0m16:10:41.414837 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
 [0m16:10:41.415830 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B0324D7370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B032608550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B03260A2F0>]}
 [0m16:10:41.416829 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-07-07 11:44:26.384849 | 449fb805-0ad1-452a-ba00-fc0ffe241826 ==============================
+[0m11:44:26.384849 [info ] [MainThread]: Running with dbt=1.4.1
+[0m11:44:26.388780 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\USER\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m11:44:26.389782 [debug] [MainThread]: Tracking: tracking
+[0m11:44:26.391331 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022231483310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002223B0D6E00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002223B0D6DA0>]}
+[0m11:44:28.007576 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m11:44:28.008571 [debug] [MainThread]: Partial parsing: added file: Snowflake_datawarehouse://models\example\stg_dimcustomer.sql
+[0m11:44:28.070291 [debug] [MainThread]: 1699: static parser successfully parsed example\stg_dimcustomer.sql
+[0m11:44:28.137556 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '449fb805-0ad1-452a-ba00-fc0ffe241826', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002223C34D720>]}
+[0m11:44:28.149765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '449fb805-0ad1-452a-ba00-fc0ffe241826', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002223C2CBF10>]}
+[0m11:44:28.150442 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 304 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m11:44:28.152537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '449fb805-0ad1-452a-ba00-fc0ffe241826', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022231483310>]}
+[0m11:44:28.155449 [info ] [MainThread]: 
+[0m11:44:28.160676 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m11:44:28.165363 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WideWorldImportersDW'
+[0m11:44:28.222852 [debug] [ThreadPool]: Using snowflake connection "list_WideWorldImportersDW"
+[0m11:44:28.224328 [debug] [ThreadPool]: On list_WideWorldImportersDW: /* {"app": "dbt", "dbt_version": "1.4.1", "profile_name": "Snowflake_datawarehouse", "target_name": "dev", "connection_name": "list_WideWorldImportersDW"} */
+show terse schemas in database WideWorldImportersDW
+    limit 10000
+[0m11:44:28.225657 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:44:33.365644 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 5 seconds
+[0m11:44:33.369655 [debug] [ThreadPool]: On list_WideWorldImportersDW: Close
+[0m11:44:33.795689 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WideWorldImportersDW_stg'
+[0m11:44:33.804049 [debug] [ThreadPool]: Using snowflake connection "list_WideWorldImportersDW_stg"
+[0m11:44:33.807051 [debug] [ThreadPool]: On list_WideWorldImportersDW_stg: /* {"app": "dbt", "dbt_version": "1.4.1", "profile_name": "Snowflake_datawarehouse", "target_name": "dev", "connection_name": "list_WideWorldImportersDW_stg"} */
+show terse objects in WideWorldImportersDW.stg
+[0m11:44:33.807051 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:44:36.030887 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 2 seconds
+[0m11:44:36.035424 [debug] [ThreadPool]: On list_WideWorldImportersDW_stg: Close
+[0m11:44:36.457657 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '449fb805-0ad1-452a-ba00-fc0ffe241826', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002223C379480>]}
+[0m11:44:36.460748 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:44:36.466427 [info ] [MainThread]: 
+[0m11:44:36.488662 [debug] [Thread-1 (]: Began running node model.Snowflake_datawarehouse.stg_dimcustomer
+[0m11:44:36.489656 [debug] [Thread-2 (]: Began running node model.Snowflake_datawarehouse.stgdimcity
+[0m11:44:36.490648 [info ] [Thread-1 (]: 1 of 2 START sql table model stg.DimCustomer ................................... [RUN]
+[0m11:44:36.490648 [info ] [Thread-2 (]: 2 of 2 START sql table model stg.DimCity ....................................... [RUN]
+[0m11:44:36.496319 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.Snowflake_datawarehouse.stg_dimcustomer'
+[0m11:44:36.498320 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.Snowflake_datawarehouse.stgdimcity'
+[0m11:44:36.498320 [debug] [Thread-1 (]: Began compiling node model.Snowflake_datawarehouse.stg_dimcustomer
+[0m11:44:36.499317 [debug] [Thread-2 (]: Began compiling node model.Snowflake_datawarehouse.stgdimcity
+[0m11:44:36.504496 [debug] [Thread-1 (]: Writing injected SQL for node "model.Snowflake_datawarehouse.stg_dimcustomer"
+[0m11:44:36.506527 [debug] [Thread-2 (]: Writing injected SQL for node "model.Snowflake_datawarehouse.stgdimcity"
+[0m11:44:36.514556 [debug] [Thread-1 (]: Timing info for model.Snowflake_datawarehouse.stg_dimcustomer (compile): 2023-07-07 11:44:36.500320 => 2023-07-07 11:44:36.512188
+[0m11:44:36.515117 [debug] [Thread-1 (]: Began executing node model.Snowflake_datawarehouse.stg_dimcustomer
+[0m11:44:36.525121 [debug] [Thread-2 (]: Timing info for model.Snowflake_datawarehouse.stgdimcity (compile): 2023-07-07 11:44:36.504496 => 2023-07-07 11:44:36.525121
+[0m11:44:36.581817 [debug] [Thread-1 (]: Writing runtime sql for node "model.Snowflake_datawarehouse.stg_dimcustomer"
+[0m11:44:36.585514 [debug] [Thread-2 (]: Began executing node model.Snowflake_datawarehouse.stgdimcity
+[0m11:44:36.592944 [debug] [Thread-2 (]: Writing runtime sql for node "model.Snowflake_datawarehouse.stgdimcity"
+[0m11:44:36.594827 [debug] [Thread-1 (]: Using snowflake connection "model.Snowflake_datawarehouse.stg_dimcustomer"
+[0m11:44:36.595826 [debug] [Thread-1 (]: On model.Snowflake_datawarehouse.stg_dimcustomer: /* {"app": "dbt", "dbt_version": "1.4.1", "profile_name": "Snowflake_datawarehouse", "target_name": "dev", "node_id": "model.Snowflake_datawarehouse.stg_dimcustomer"} */
+create or replace transient table WideWorldImportersDW.stg.DimCustomer  as
+        (-- The model that creates the staging table for DimCustomer
+
+
+
+
+SELECT c.CustomerID,
+        c.CustomerName,
+        c2.CustomerName AS BillToCustomer,
+        cc.CustomerCategoryName AS Category,
+        b.BuyingGroupName AS BuyingGroup,
+        p.FullName AS People,
+        c.PostalPostalCode       
+FROM src.customers AS c
+LEFT JOIN src.customers AS c2
+        ON c.BillToCustomerID = c2.CustomerID
+LEFT JOIN src.customercategories AS cc 
+        ON c.CustomerCategoryID = cc.CustomerCategoryID
+LEFT JOIN src.buyinggroups as b
+        ON c.BuyingGroupID = b.BuyingGroupID
+LEFT JOIN src.people AS P
+        ON c.PrimaryContactPersonID = p.PersonID
+        );
+[0m11:44:36.597912 [debug] [Thread-2 (]: Using snowflake connection "model.Snowflake_datawarehouse.stgdimcity"
+[0m11:44:36.597912 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:44:36.598915 [debug] [Thread-2 (]: On model.Snowflake_datawarehouse.stgdimcity: /* {"app": "dbt", "dbt_version": "1.4.1", "profile_name": "Snowflake_datawarehouse", "target_name": "dev", "node_id": "model.Snowflake_datawarehouse.stgdimcity"} */
+create or replace transient table WideWorldImportersDW.stg.DimCity  as
+        (-- The model that creates the staging table for DimCity
+
+
+
+SELECT  ci.CityID,
+        ci.CityName,
+        s.StateProvinceName,
+        co.CountryName,
+        co.Continent,
+        co.Region,
+        co.SubRegion,
+        s.SalesTerritory
+
+FROM src.cities AS ci
+LEFT JOIN src.stateprovinces AS s 
+        ON ci.StateProvinceID = s.StateProvinceID
+LEFT JOIN src.countries AS co 
+        ON s.CountryID = co.CountryID
+        );
+[0m11:44:36.602282 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m11:44:41.106046 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 5 seconds
+[0m11:44:41.133837 [debug] [Thread-2 (]: Timing info for model.Snowflake_datawarehouse.stgdimcity (execute): 2023-07-07 11:44:36.586514 => 2023-07-07 11:44:41.133837
+[0m11:44:41.137278 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 5 seconds
+[0m11:44:41.138357 [debug] [Thread-2 (]: On model.Snowflake_datawarehouse.stgdimcity: Close
+[0m11:44:41.140649 [debug] [Thread-1 (]: Timing info for model.Snowflake_datawarehouse.stg_dimcustomer (execute): 2023-07-07 11:44:36.516388 => 2023-07-07 11:44:41.140649
+[0m11:44:41.143862 [debug] [Thread-1 (]: On model.Snowflake_datawarehouse.stg_dimcustomer: Close
+[0m11:44:41.574965 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '449fb805-0ad1-452a-ba00-fc0ffe241826', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002223B04BFA0>]}
+[0m11:44:41.574965 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '449fb805-0ad1-452a-ba00-fc0ffe241826', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002223C8643D0>]}
+[0m11:44:41.579928 [info ] [Thread-1 (]: 1 of 2 OK created sql table model stg.DimCustomer .............................. [[32mSUCCESS 1[0m in 5.08s]
+[0m11:44:41.587803 [debug] [Thread-1 (]: Finished running node model.Snowflake_datawarehouse.stg_dimcustomer
+[0m11:44:41.582034 [info ] [Thread-2 (]: 2 of 2 OK created sql table model stg.DimCity .................................. [[32mSUCCESS 1[0m in 5.08s]
+[0m11:44:41.591174 [debug] [Thread-2 (]: Finished running node model.Snowflake_datawarehouse.stgdimcity
+[0m11:44:41.592177 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m11:44:41.593717 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:44:41.593717 [debug] [MainThread]: Connection 'list_WideWorldImportersDW' was properly closed.
+[0m11:44:41.594717 [debug] [MainThread]: Connection 'list_WideWorldImportersDW_stg' was properly closed.
+[0m11:44:41.594902 [debug] [MainThread]: Connection 'model.Snowflake_datawarehouse.stg_dimcustomer' was properly closed.
+[0m11:44:41.594902 [debug] [MainThread]: Connection 'model.Snowflake_datawarehouse.stgdimcity' was properly closed.
+[0m11:44:41.595940 [info ] [MainThread]: 
+[0m11:44:41.596368 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 13.44 seconds (13.44s).
+[0m11:44:41.598416 [debug] [MainThread]: Command end result
+[0m11:44:41.606288 [info ] [MainThread]: 
+[0m11:44:41.607800 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:44:41.610259 [info ] [MainThread]: 
+[0m11:44:41.611141 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m11:44:41.612523 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022230CA6D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002223C379480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002223B04BCA0>]}
+[0m11:44:41.613530 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-07-07 12:13:34.689756 | 2d33660a-f037-474e-a5a0-06a26700bc03 ==============================
+[0m12:13:34.689756 [info ] [MainThread]: Running with dbt=1.4.1
+[0m12:13:34.695110 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\USER\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m12:13:34.697113 [debug] [MainThread]: Tracking: tracking
+[0m12:13:34.700707 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB5C5B0D60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB6730FFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB6730EFE0>]}
+[0m12:13:34.850228 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m12:13:34.850448 [debug] [MainThread]: Partial parsing: added file: Snowflake_datawarehouse://models\example\stg_dimEmployee.sql
+[0m12:13:34.874725 [debug] [MainThread]: 1699: static parser successfully parsed example\stg_dimEmployee.sql
+[0m12:13:34.905382 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2d33660a-f037-474e-a5a0-06a26700bc03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB68585BD0>]}
+[0m12:13:34.913870 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2d33660a-f037-474e-a5a0-06a26700bc03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB684F7E50>]}
+[0m12:13:34.914869 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 304 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m12:13:34.917385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2d33660a-f037-474e-a5a0-06a26700bc03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB5C5B0D60>]}
+[0m12:13:34.919947 [info ] [MainThread]: 
+[0m12:13:34.922252 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m12:13:34.929789 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WideWorldImportersDW'
+[0m12:13:34.963651 [debug] [ThreadPool]: Using snowflake connection "list_WideWorldImportersDW"
+[0m12:13:34.965299 [debug] [ThreadPool]: On list_WideWorldImportersDW: /* {"app": "dbt", "dbt_version": "1.4.1", "profile_name": "Snowflake_datawarehouse", "target_name": "dev", "connection_name": "list_WideWorldImportersDW"} */
+show terse schemas in database WideWorldImportersDW
+    limit 10000
+[0m12:13:34.965299 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:13:37.783003 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 3 seconds
+[0m12:13:37.784009 [debug] [ThreadPool]: On list_WideWorldImportersDW: Close
+[0m12:13:38.222932 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WideWorldImportersDW_stg'
+[0m12:13:38.282242 [debug] [ThreadPool]: Using snowflake connection "list_WideWorldImportersDW_stg"
+[0m12:13:38.282242 [debug] [ThreadPool]: On list_WideWorldImportersDW_stg: /* {"app": "dbt", "dbt_version": "1.4.1", "profile_name": "Snowflake_datawarehouse", "target_name": "dev", "connection_name": "list_WideWorldImportersDW_stg"} */
+show terse objects in WideWorldImportersDW.stg
+[0m12:13:38.283242 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:13:40.372272 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 2 seconds
+[0m12:13:40.380679 [debug] [ThreadPool]: On list_WideWorldImportersDW_stg: Close
+[0m12:13:40.823068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2d33660a-f037-474e-a5a0-06a26700bc03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB684F7C10>]}
+[0m12:13:40.828335 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:13:40.832166 [info ] [MainThread]: 
+[0m12:13:40.850428 [debug] [Thread-1 (]: Began running node model.Snowflake_datawarehouse.stg_dimEmployee
+[0m12:13:40.850428 [debug] [Thread-2 (]: Began running node model.Snowflake_datawarehouse.stg_dimcustomer
+[0m12:13:40.850428 [debug] [Thread-3 (]: Began running node model.Snowflake_datawarehouse.stgdimcity
+[0m12:13:40.851463 [info ] [Thread-1 (]: 1 of 3 START sql table model stg.DimEmployee ................................... [RUN]
+[0m12:13:40.852538 [info ] [Thread-2 (]: 2 of 3 START sql table model stg.DimCustomer ................................... [RUN]
+[0m12:13:40.854651 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.Snowflake_datawarehouse.stg_dimEmployee'
+[0m12:13:40.853540 [info ] [Thread-3 (]: 3 of 3 START sql table model stg.DimCity ....................................... [RUN]
+[0m12:13:40.856951 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.Snowflake_datawarehouse.stg_dimcustomer'
+[0m12:13:40.858648 [debug] [Thread-1 (]: Began compiling node model.Snowflake_datawarehouse.stg_dimEmployee
+[0m12:13:40.859657 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.Snowflake_datawarehouse.stgdimcity'
+[0m12:13:40.860653 [debug] [Thread-2 (]: Began compiling node model.Snowflake_datawarehouse.stg_dimcustomer
+[0m12:13:40.866805 [debug] [Thread-1 (]: Writing injected SQL for node "model.Snowflake_datawarehouse.stg_dimEmployee"
+[0m12:13:40.868367 [debug] [Thread-3 (]: Began compiling node model.Snowflake_datawarehouse.stgdimcity
+[0m12:13:40.875371 [debug] [Thread-2 (]: Writing injected SQL for node "model.Snowflake_datawarehouse.stg_dimcustomer"
+[0m12:13:40.881487 [debug] [Thread-3 (]: Writing injected SQL for node "model.Snowflake_datawarehouse.stgdimcity"
+[0m12:13:40.882732 [debug] [Thread-1 (]: Timing info for model.Snowflake_datawarehouse.stg_dimEmployee (compile): 2023-07-07 12:13:40.860653 => 2023-07-07 12:13:40.882732
+[0m12:13:40.885541 [debug] [Thread-2 (]: Timing info for model.Snowflake_datawarehouse.stg_dimcustomer (compile): 2023-07-07 12:13:40.868936 => 2023-07-07 12:13:40.885541
+[0m12:13:40.886529 [debug] [Thread-1 (]: Began executing node model.Snowflake_datawarehouse.stg_dimEmployee
+[0m12:13:40.887530 [debug] [Thread-2 (]: Began executing node model.Snowflake_datawarehouse.stg_dimcustomer
+[0m12:13:40.902373 [debug] [Thread-3 (]: Timing info for model.Snowflake_datawarehouse.stgdimcity (compile): 2023-07-07 12:13:40.876376 => 2023-07-07 12:13:40.902373
+[0m12:13:40.941997 [debug] [Thread-1 (]: Writing runtime sql for node "model.Snowflake_datawarehouse.stg_dimEmployee"
+[0m12:13:40.946057 [debug] [Thread-2 (]: Writing runtime sql for node "model.Snowflake_datawarehouse.stg_dimcustomer"
+[0m12:13:40.949296 [debug] [Thread-3 (]: Began executing node model.Snowflake_datawarehouse.stgdimcity
+[0m12:13:40.951828 [debug] [Thread-1 (]: Using snowflake connection "model.Snowflake_datawarehouse.stg_dimEmployee"
+[0m12:13:40.954860 [debug] [Thread-3 (]: Writing runtime sql for node "model.Snowflake_datawarehouse.stgdimcity"
+[0m12:13:40.958249 [debug] [Thread-2 (]: Using snowflake connection "model.Snowflake_datawarehouse.stg_dimcustomer"
+[0m12:13:40.959354 [debug] [Thread-1 (]: On model.Snowflake_datawarehouse.stg_dimEmployee: /* {"app": "dbt", "dbt_version": "1.4.1", "profile_name": "Snowflake_datawarehouse", "target_name": "dev", "node_id": "model.Snowflake_datawarehouse.stg_dimEmployee"} */
+create or replace transient table WideWorldImportersDW.stg.DimEmployee  as
+        (-- The model that creates the staging table for DimEmployee
+
+
+
+SELECT p.PersonID AS EmployeeID,
+        p.FullName AS EmployeeName,
+        p.PreferredName,
+        p.IsSalesPerson,
+        p.Photo
+FROM src.people AS p
+WHERE IsEmployee = TRUE
+        );
+[0m12:13:40.960355 [debug] [Thread-2 (]: On model.Snowflake_datawarehouse.stg_dimcustomer: /* {"app": "dbt", "dbt_version": "1.4.1", "profile_name": "Snowflake_datawarehouse", "target_name": "dev", "node_id": "model.Snowflake_datawarehouse.stg_dimcustomer"} */
+create or replace transient table WideWorldImportersDW.stg.DimCustomer  as
+        (-- The model that creates the staging table for DimCustomer
+
+
+
+
+SELECT c.CustomerID,
+        c.CustomerName,
+        c2.CustomerName AS BillToCustomer,
+        cc.CustomerCategoryName AS Category,
+        b.BuyingGroupName AS BuyingGroup,
+        p.FullName AS People,
+        c.PostalPostalCode       
+FROM src.customers AS c
+LEFT JOIN src.customers AS c2
+        ON c.BillToCustomerID = c2.CustomerID
+LEFT JOIN src.customercategories AS cc 
+        ON c.CustomerCategoryID = cc.CustomerCategoryID
+LEFT JOIN src.buyinggroups as b
+        ON c.BuyingGroupID = b.BuyingGroupID
+LEFT JOIN src.people AS P
+        ON c.PrimaryContactPersonID = p.PersonID
+        );
+[0m12:13:40.960355 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m12:13:40.962589 [debug] [Thread-3 (]: Using snowflake connection "model.Snowflake_datawarehouse.stgdimcity"
+[0m12:13:40.963178 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:13:40.965215 [debug] [Thread-3 (]: On model.Snowflake_datawarehouse.stgdimcity: /* {"app": "dbt", "dbt_version": "1.4.1", "profile_name": "Snowflake_datawarehouse", "target_name": "dev", "node_id": "model.Snowflake_datawarehouse.stgdimcity"} */
+create or replace transient table WideWorldImportersDW.stg.DimCity  as
+        (-- The model that creates the staging table for DimCity
+
+
+
+SELECT  ci.CityID,
+        ci.CityName,
+        s.StateProvinceName,
+        co.CountryName,
+        co.Continent,
+        co.Region,
+        co.SubRegion,
+        s.SalesTerritory
+
+FROM src.cities AS ci
+LEFT JOIN src.stateprovinces AS s 
+        ON ci.StateProvinceID = s.StateProvinceID
+LEFT JOIN src.countries AS co 
+        ON s.CountryID = co.CountryID
+        );
+[0m12:13:40.969579 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:13:44.799786 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 4 seconds
+[0m12:13:44.869870 [debug] [Thread-1 (]: Timing info for model.Snowflake_datawarehouse.stg_dimEmployee (execute): 2023-07-07 12:13:40.888530 => 2023-07-07 12:13:44.869870
+[0m12:13:44.871682 [debug] [Thread-1 (]: On model.Snowflake_datawarehouse.stg_dimEmployee: Close
+[0m12:13:45.068571 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 4 seconds
+[0m12:13:45.092450 [debug] [Thread-2 (]: Timing info for model.Snowflake_datawarehouse.stg_dimcustomer (execute): 2023-07-07 12:13:40.941997 => 2023-07-07 12:13:45.092450
+[0m12:13:45.095761 [debug] [Thread-2 (]: On model.Snowflake_datawarehouse.stg_dimcustomer: Close
+[0m12:13:45.302777 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2d33660a-f037-474e-a5a0-06a26700bc03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB685AAA70>]}
+[0m12:13:45.303781 [info ] [Thread-1 (]: 1 of 3 OK created sql table model stg.DimEmployee .............................. [[32mSUCCESS 1[0m in 4.45s]
+[0m12:13:45.308597 [debug] [Thread-1 (]: Finished running node model.Snowflake_datawarehouse.stg_dimEmployee
+[0m12:13:45.476353 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 5 seconds
+[0m12:13:45.479482 [debug] [Thread-3 (]: Timing info for model.Snowflake_datawarehouse.stgdimcity (execute): 2023-07-07 12:13:40.952827 => 2023-07-07 12:13:45.479482
+[0m12:13:45.479482 [debug] [Thread-3 (]: On model.Snowflake_datawarehouse.stgdimcity: Close
+[0m12:13:45.523439 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2d33660a-f037-474e-a5a0-06a26700bc03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB689002E0>]}
+[0m12:13:45.524428 [info ] [Thread-2 (]: 2 of 3 OK created sql table model stg.DimCustomer .............................. [[32mSUCCESS 1[0m in 4.67s]
+[0m12:13:45.525389 [debug] [Thread-2 (]: Finished running node model.Snowflake_datawarehouse.stg_dimcustomer
+[0m12:13:45.910138 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2d33660a-f037-474e-a5a0-06a26700bc03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB68753A60>]}
+[0m12:13:45.910138 [info ] [Thread-3 (]: 3 of 3 OK created sql table model stg.DimCity .................................. [[32mSUCCESS 1[0m in 5.05s]
+[0m12:13:45.912821 [debug] [Thread-3 (]: Finished running node model.Snowflake_datawarehouse.stgdimcity
+[0m12:13:45.915516 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m12:13:45.919029 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:13:45.919029 [debug] [MainThread]: Connection 'list_WideWorldImportersDW' was properly closed.
+[0m12:13:45.920182 [debug] [MainThread]: Connection 'list_WideWorldImportersDW_stg' was properly closed.
+[0m12:13:45.920182 [debug] [MainThread]: Connection 'model.Snowflake_datawarehouse.stg_dimEmployee' was properly closed.
+[0m12:13:45.921208 [debug] [MainThread]: Connection 'model.Snowflake_datawarehouse.stg_dimcustomer' was properly closed.
+[0m12:13:45.921208 [debug] [MainThread]: Connection 'model.Snowflake_datawarehouse.stgdimcity' was properly closed.
+[0m12:13:45.922207 [info ] [MainThread]: 
+[0m12:13:45.923363 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 11.00 seconds (11.00s).
+[0m12:13:45.924362 [debug] [MainThread]: Command end result
+[0m12:13:45.933760 [info ] [MainThread]: 
+[0m12:13:45.935850 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:13:45.937446 [info ] [MainThread]: 
+[0m12:13:45.939576 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m12:13:45.940885 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB5C5B0D60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB5C5909A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB685B17E0>]}
+[0m12:13:45.941949 [debug] [MainThread]: Flushing usage events
