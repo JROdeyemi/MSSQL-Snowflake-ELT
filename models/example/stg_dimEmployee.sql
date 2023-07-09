@@ -3,7 +3,7 @@
 {{
     config(
         materialized='table',
-        unique_key='CityID',
+        unique_key='EmployeeID',
         alias='DimEmployee'
     )
 }}
