@@ -1,8 +1,8 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: "snowflake_datawarehouse"
-version: "1.0.0"
+name: "stg"
+version: 2
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
@@ -31,12 +31,27 @@ clean-targets: # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 # dbt_project.yml
 models:
-  my_stg_schema:
+  - name: stg_dimcustomer
     schema: stg
-    +config:
-      +profile: stg
+    config:
+      materialized: table
 
-  my_dwh_schema:
-    schema: dwh
-    +config:
-      +profile: dwh
+  - name: stg_dimEmployee
+    schema: stg
+    config:
+      materialized: table
+
+  - name: stg_dimStockitems
+    schema: stg
+    config:
+      materialized: table
+
+  - name: stg_factsales
+    schema: stg
+    config:
+      materialized: table
+
+  - name: stgdimcity
+    schema: stg
+    config:
+      materialized: table

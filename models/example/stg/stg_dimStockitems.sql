@@ -1,12 +1,5 @@
 -- The model that creates the staging table for DimStockItems
 
-{{
-    config(
-        materialized='table',
-        unique_key='StockItemID',
-        alias='DimStockItem'
-    )
-}}
 
 SELECT s.StockItemID,
         s.StockItemName,

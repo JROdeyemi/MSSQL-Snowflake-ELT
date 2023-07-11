@@ -1,12 +1,5 @@
 -- The model that creates the staging table for FactSales
 
-{{
-    config(
-        materialized='table',
-        alias='FactSales'
-    )
-}}
-
 SELECT i.InvoiceID,
         il.Description,
         c.CustomerID,

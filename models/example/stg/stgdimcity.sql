@@ -1,13 +1,5 @@
 -- The model that creates the staging table for DimCity
 
-{{
-    config(
-        materialized='table',
-        unique_key='CityID',
-        alias='DimCity'
-    )
-}}
-
 SELECT  ci.CityID,
         ci.CityName,
         s.StateProvinceName,

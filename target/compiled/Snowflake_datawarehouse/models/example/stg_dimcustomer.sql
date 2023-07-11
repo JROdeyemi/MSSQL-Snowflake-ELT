@@ -8,8 +8,8 @@ SELECT c.CustomerID,
         c2.CustomerName AS BillToCustomer,
         cc.CustomerCategoryName AS Category,
         b.BuyingGroupName AS BuyingGroup,
-        p.FullName AS People,
-        c.PostalPostalCode       
+        p.FullName AS PrimaryContact,
+        c.PostalPostalCode AS PostalCode   
 FROM src.customers AS c
 LEFT JOIN src.customers AS c2
         ON c.BillToCustomerID = c2.CustomerID
