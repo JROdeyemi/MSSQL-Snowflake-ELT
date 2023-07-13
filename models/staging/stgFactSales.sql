@@ -22,12 +22,12 @@ SELECT i.InvoiceID,
         il.UnitPrice,
         i.SalesPersonPersonID AS EmployeeID,
         c.DeliveryCityID AS CityID,
+        TO_NUMBER(REPLACE(i.InvoiceDate, '-', '')) AS InvoiceDateKey,
+        TO_NUMBER(REPLACE(TO_CHAR(DATE(i.ConfirmedDeliveryTime)), '-', '')) AS DeliveryDateKey,
         il.TaxRate,
         il.TaxAmount,
         il.LineProfit,
-        il.ExtendedPrice,
-        TO_NUMBER(REPLACE(i.InvoiceDate, '-', '')) AS InvoiceDateKey,
-        TO_NUMBER(REPLACE(TO_CHAR(DATE(i.ConfirmedDeliveryTime)), '-', '')) AS DeliveryDateKey
+        il.ExtendedPrice
 FROM invoices AS i 
 LEFT JOIN invoicelines AS il 
         ON i.invoiceid = il.invoiceid
