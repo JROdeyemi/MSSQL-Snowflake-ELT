@@ -1,13 +1,15 @@
 
-  create or replace   view WideWorldImportersDW.dwh.src_people
+  create or replace   view WideWorldImportersDW.src.src_people
   
    as (
-    WITH people AS(
-    SELECT *
-    FROM src.People
-)
-
-SELECT *
+    
+
+WITH people AS(
+    SELECT *
+    FROM src.People
+)
+
+SELECT *
 FROM people
   );
 

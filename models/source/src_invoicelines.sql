@@ -1,3 +1,7 @@
+{{
+    config(schema='src')
+}}
+
 WITH invoicelines AS(
     SELECT *
     FROM src.Invoicelines

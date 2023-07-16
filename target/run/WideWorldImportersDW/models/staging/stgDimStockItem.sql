@@ -1,17 +1,25 @@
--- The model that creates the staging table for DimStockItems
+
+  
+    
+
+        create or replace transient table WideWorldImportersDW.stg.stgDimStockItem
+         as
+        (-- The model that creates the staging table for DimStockItems
+
+
 WITH stockitems AS(
         SELECT *
-        FROM {{ ref('src_StockItems')}}
+        FROM WideWorldImportersDW.src.src_StockItems
 ),
 
 colors AS(
         SELECT *
-        FROM {{ ref('src_Colors')}}
+        FROM WideWorldImportersDW.src.src_Colors
 ),
 
 packagetypes AS(
         SELECT *
-        FROM {{ ref('src_PackageTypes')}}
+        FROM WideWorldImportersDW.src.src_PackageTypes
 )
 
 SELECT s.StockItemID,
@@ -29,7 +37,8 @@ SELECT s.StockItemID,
         s.UnitPrice,
         s.RecommendedRetailPrice,
         s.TypicalWeightPerUnit, 
-        s.Photo
+        s.Photo,
+        s.ValidFrom AS DateCreated
 
 FROM stockitems AS s
 LEFT JOIN colors AS c
@@ -37,10 +46,7 @@ LEFT JOIN colors AS c
 LEFT JOIN packagetypes AS p 
         ON s.UnitPackageID = p.PackageTypeID
 LEFT JOIN packagetypes AS p2
-        ON s.OuterPackageID = p2.PackageTypeID 
-
-
-
-
-
-
+        ON s.OuterPackageID = p2.PackageTypeID
+        );
+      
+  

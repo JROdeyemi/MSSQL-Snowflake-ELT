@@ -1,7 +1,9 @@
-WITH customercategories AS (
-    SELECT *
-    FROM src.CustomerCategories
-)
-
-SELECT *
+
+
+WITH customercategories AS (
+    SELECT *
+    FROM src.CustomerCategories
+)
+
+SELECT *
 FROM customercategories

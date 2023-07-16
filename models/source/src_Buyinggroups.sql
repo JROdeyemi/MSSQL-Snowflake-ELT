@@ -1,3 +1,7 @@
+{{
+    config(schema='src')
+}}
+
 WITH buyinggroups AS (
     SELECT *
     FROM src.buyinggroups

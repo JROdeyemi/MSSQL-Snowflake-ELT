@@ -1,3 +1,7 @@
+{{
+    config(schema='src')
+}}
+
 WITH colors AS(
     SELECT *
     FROM src.Colors

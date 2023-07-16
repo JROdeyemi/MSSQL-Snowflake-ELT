@@ -5,17 +5,17 @@
     -- The model that creates the staging table for DimStockItems
 WITH stockitems AS(
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_StockItems
+        FROM WideWorldImportersDW.src.src_StockItems
 ),
 
 colors AS(
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_Colors
+        FROM WideWorldImportersDW.src.src_Colors
 ),
 
 packagetypes AS(
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_PackageTypes
+        FROM WideWorldImportersDW.src.src_PackageTypes
 )
 
 SELECT s.StockItemID,

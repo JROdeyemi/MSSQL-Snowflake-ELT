@@ -1,3 +1,7 @@
+{{
+    config(schema='src')
+}}
+
 WITH stockitems AS(
     SELECT *
     FROM src.StockItems

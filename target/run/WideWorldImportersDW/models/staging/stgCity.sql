@@ -6,17 +6,17 @@
 
 WITH stateprovinces AS (
         SELECT * 
-        FROM WideWorldImportersDW.dwh.src_stateprovinces
+        FROM WideWorldImportersDW.src.src_stateprovinces
 ),
 
 cities AS(
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_Cities
+        FROM WideWorldImportersDW.src.src_Cities
 ),
 
 countries AS(
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_Countries
+        FROM WideWorldImportersDW.src.src_Countries
 )
 
 

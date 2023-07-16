@@ -1,4 +1,11 @@
--- The model that creates the staging table for DimCustomer
+
+  
+    
+
+        create or replace transient table WideWorldImportersDW.stg.stgDimCustomer
+         as
+        (-- The model that creates the staging table for DimCustomer
+
 
 WITH customers AS (
         SELECT *
@@ -26,7 +33,8 @@ SELECT c.CustomerID,
         cc.CustomerCategoryName AS Category,
         b.BuyingGroupName AS BuyingGroup,
         p.FullName AS PrimaryContact,
-        c.PostalPostalCode AS PostalCode
+        c.PostalPostalCode AS PostalCode,
+        c.ValidFrom AS DateCreated
 
 
         
@@ -39,3 +47,6 @@ LEFT JOIN buyinggroups AS b
         ON c.BuyingGroupID = b.BuyingGroupID
 LEFT JOIN people AS p 
         ON c.PrimaryContactPersonID = p.PersonID
+        );
+      
+  

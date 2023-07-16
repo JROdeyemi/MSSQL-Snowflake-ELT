@@ -6,22 +6,22 @@
 
 WITH customers AS (
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_Customers
+        FROM WideWorldImportersDW.src.src_Customers
 ),
 
 customercategories AS (
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_customercategories
+        FROM WideWorldImportersDW.src.src_customercategories
 ),
 
 buyinggroups AS (
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_Buyinggroups
+        FROM WideWorldImportersDW.src.src_Buyinggroups
 ),
 
 people AS (
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_people
+        FROM WideWorldImportersDW.src.src_people
 )
 
 SELECT c.CustomerID,

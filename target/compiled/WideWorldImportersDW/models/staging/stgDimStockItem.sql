@@ -1,4 +1,6 @@
 -- The model that creates the staging table for DimStockItems
+
+
 WITH stockitems AS(
         SELECT *
         FROM WideWorldImportersDW.src.src_StockItems
@@ -29,7 +31,8 @@ SELECT s.StockItemID,
         s.UnitPrice,
         s.RecommendedRetailPrice,
         s.TypicalWeightPerUnit, 
-        s.Photo
+        s.Photo,
+        s.ValidFrom AS DateCreated
 
 FROM stockitems AS s
 LEFT JOIN colors AS c

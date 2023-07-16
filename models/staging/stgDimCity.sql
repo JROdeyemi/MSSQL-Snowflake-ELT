@@ -1,4 +1,11 @@
 -- The model that creates the staging table for DimCity
+{{
+    config(
+        schema='stg',
+        materialized='table'
+    )
+}}
+
 
 WITH stateprovinces AS (
         SELECT * 
@@ -23,7 +30,8 @@ SELECT c.CityID,
         co.Continent,
         co.Region,
         co.SubRegion,
-        s.SalesTerritory
+        s.SalesTerritory,
+        c.ValidFrom AS DateCreated
 
 FROM cities AS c
 LEFT JOIN stateprovinces AS s 

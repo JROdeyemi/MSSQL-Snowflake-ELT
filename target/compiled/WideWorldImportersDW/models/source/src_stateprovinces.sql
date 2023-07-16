@@ -1,7 +1,9 @@
-WITH stateprovinces AS(
-    SELECT *
-    FROM src.StateProvinces
-)
-
-SELECT *
+
+
+WITH stateprovinces AS(
+    SELECT *
+    FROM src.StateProvinces
+)
+
+SELECT *
 FROM stateprovinces

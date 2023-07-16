@@ -1,23 +1,29 @@
 -- The model that creates the staging table for DimCustomer
+{{
+    config(
+        schema='stg',
+        materialized='table'
+    )
+}}
 
 WITH customers AS (
         SELECT *
-        FROM WideWorldImportersDW.src.src_Customers
+        FROM {{ ref('src_Customers')}}
 ),
 
 customercategories AS (
         SELECT *
-        FROM WideWorldImportersDW.src.src_customercategories
+        FROM {{ ref('src_customercategories')}}
 ),
 
 buyinggroups AS (
         SELECT *
-        FROM WideWorldImportersDW.src.src_Buyinggroups
+        FROM {{ ref('src_Buyinggroups')}}
 ),
 
 people AS (
         SELECT *
-        FROM WideWorldImportersDW.src.src_people
+        FROM {{ ref('src_people')}}
 )
 
 SELECT c.CustomerID,
@@ -26,7 +32,8 @@ SELECT c.CustomerID,
         cc.CustomerCategoryName AS Category,
         b.BuyingGroupName AS BuyingGroup,
         p.FullName AS PrimaryContact,
-        c.PostalPostalCode AS PostalCode
+        c.PostalPostalCode AS PostalCode,
+        c.ValidFrom AS DateCreated
 
 
         
@@ -38,4 +45,4 @@ LEFT JOIN customercategories AS cc
 LEFT JOIN buyinggroups AS b 
         ON c.BuyingGroupID = b.BuyingGroupID
 LEFT JOIN people AS p 
-        ON c.PrimaryContactPersonID = p.PersonID
+        ON c.PrimaryContactPersonID = p.PersonID 

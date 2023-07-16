@@ -1,21 +1,25 @@
 
-  create or replace   view WideWorldImportersDW.dwh.stgFactSales
   
-   as (
-    -- The model that creates the staging table for FactSales
+    
+
+        create or replace transient table WideWorldImportersDW.stg.stgFactSales
+         as
+        (-- The model that creates the staging table for FactSales
+
+
 WITH invoices AS(
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_invoices
+        FROM WideWorldImportersDW.src.src_invoices
 ),
 
 invoicelines AS(
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_invoicelines
+        FROM WideWorldImportersDW.src.src_invoicelines
 ),
 
 customers AS(
         SELECT *
-        FROM WideWorldImportersDW.dwh.src_Customers
+        FROM WideWorldImportersDW.src.src_Customers
 )
 
 SELECT i.InvoiceID,
@@ -26,16 +30,18 @@ SELECT i.InvoiceID,
         il.UnitPrice,
         i.SalesPersonPersonID AS EmployeeID,
         c.DeliveryCityID AS CityID,
+        TO_NUMBER(REPLACE(i.InvoiceDate, '-', '')) AS InvoiceDateKey,
+        TO_NUMBER(REPLACE(TO_CHAR(DATE(i.ConfirmedDeliveryTime)), '-', '')) AS DeliveryDateKey,
         il.TaxRate,
         il.TaxAmount,
         il.LineProfit,
         il.ExtendedPrice,
-        TO_NUMBER(REPLACE(i.InvoiceDate, '-', '')) AS InvoiceDateKey,
-        TO_NUMBER(REPLACE(TO_CHAR(DATE(i.ConfirmedDeliveryTime)), '-', '')) AS DeliveryDateKey
+        i.LastEditedWhen AS DateCreated
 FROM invoices AS i 
 LEFT JOIN invoicelines AS il 
         ON i.invoiceid = il.invoiceid
 LEFT JOIN customers AS c 
         ON i.CustomerID = c.CustomerID
-  );
-
+        );
+      
+  

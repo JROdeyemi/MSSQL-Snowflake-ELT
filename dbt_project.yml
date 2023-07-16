@@ -34,6 +34,6 @@ models:
     source:
       +materialized: view
     staging:
-      +materialized: view
+      +materialized: table
     warehouse:
       +materialized: table

@@ -1,17 +1,24 @@
 -- The model that creates the staging table for DimStockItems
+{{
+    config(
+        schema='stg',
+        materialized='table'
+    )
+}}
+
 WITH stockitems AS(
         SELECT *
-        FROM WideWorldImportersDW.src.src_StockItems
+        FROM {{ ref('src_StockItems')}}
 ),
 
 colors AS(
         SELECT *
-        FROM WideWorldImportersDW.src.src_Colors
+        FROM {{ ref('src_Colors')}}
 ),
 
 packagetypes AS(
         SELECT *
-        FROM WideWorldImportersDW.src.src_PackageTypes
+        FROM {{ ref('src_PackageTypes')}}
 )
 
 SELECT s.StockItemID,
@@ -29,7 +36,8 @@ SELECT s.StockItemID,
         s.UnitPrice,
         s.RecommendedRetailPrice,
         s.TypicalWeightPerUnit, 
-        s.Photo
+        s.Photo,
+        s.ValidFrom AS DateCreated
 
 FROM stockitems AS s
 LEFT JOIN colors AS c
@@ -37,4 +45,10 @@ LEFT JOIN colors AS c
 LEFT JOIN packagetypes AS p 
         ON s.UnitPackageID = p.PackageTypeID
 LEFT JOIN packagetypes AS p2
-        ON s.OuterPackageID = p2.PackageTypeID
+        ON s.OuterPackageID = p2.PackageTypeID 
+
+
+
+
+
+

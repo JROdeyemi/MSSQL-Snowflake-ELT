@@ -1,3 +1,7 @@
+{{
+    config(schema='src')
+}}
+
 WITH people AS(
     SELECT *
     FROM src.People

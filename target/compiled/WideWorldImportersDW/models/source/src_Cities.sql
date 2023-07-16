@@ -1,7 +1,9 @@
-WITH cities AS(
-    SELECT *
-    FROM src.Cities
-)
-
-SELECT *
+
+
+WITH cities AS(
+    SELECT *
+    FROM src.Cities
+)
+
+SELECT *
 FROM cities

@@ -1,4 +1,11 @@
 -- The model that creates the staging table for FactSales
+{{
+    config(
+        schema='stg',
+        materialized='table'
+    )
+}}
+
 WITH invoices AS(
         SELECT *
         FROM {{ ref('src_invoices')}}
@@ -27,7 +34,8 @@ SELECT i.InvoiceID,
         il.TaxRate,
         il.TaxAmount,
         il.LineProfit,
-        il.ExtendedPrice
+        il.ExtendedPrice,
+        i.LastEditedWhen AS DateCreated
 FROM invoices AS i 
 LEFT JOIN invoicelines AS il 
         ON i.invoiceid = il.invoiceid

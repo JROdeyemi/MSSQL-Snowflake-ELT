@@ -1,13 +1,15 @@
 
-  create or replace   view WideWorldImportersDW.dwh.src_Buyinggroups
+  create or replace   view WideWorldImportersDW.src.src_Buyinggroups
   
    as (
-    WITH buyinggroups AS (
-    SELECT *
-    FROM src.buyinggroups
-)
-
-SELECT *
+    
+
+WITH buyinggroups AS (
+    SELECT *
+    FROM src.buyinggroups
+)
+
+SELECT *
 FROM buyinggroups
   );
 

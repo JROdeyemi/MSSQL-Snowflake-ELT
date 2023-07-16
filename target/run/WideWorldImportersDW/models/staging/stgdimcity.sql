@@ -1,22 +1,44 @@
 
-  create or replace   view WideWorldImportersDW.dwh.stgdimcity
   
-   as (
-    -- The model that creates the staging table for DimCity
-
-SELECT  ci.CityID,
-        ci.CityName,
-        s.StateProvinceName,
-        co.CountryName,
-        co.Continent,
-        co.Region,
-        co.SubRegion,
-        s.SalesTerritory
-
-FROM src.cities AS ci
-LEFT JOIN src.stateprovinces AS s 
-        ON ci.StateProvinceID = s.StateProvinceID
-LEFT JOIN src.countries AS co 
-        ON s.CountryID = co.CountryID
-  );
+    
 
+        create or replace transient table WideWorldImportersDW.stg.stgDimCity
+         as
+        (-- The model that creates the staging table for DimCity
+
+
+
+WITH stateprovinces AS (
+        SELECT * 
+        FROM WideWorldImportersDW.src.src_stateprovinces
+),
+
+cities AS(
+        SELECT *
+        FROM WideWorldImportersDW.src.src_Cities
+),
+
+countries AS(
+        SELECT *
+        FROM WideWorldImportersDW.src.src_Countries
+)
+
+
+SELECT c.CityID,
+        c.CityName,
+        s.StateProvinceName AS StateProvince,
+        co.CountryName AS Country,
+        co.Continent,
+        co.Region,
+        co.SubRegion,
+        s.SalesTerritory,
+        c.ValidFrom AS DateCreated
+
+FROM cities AS c
+LEFT JOIN stateprovinces AS s 
+        ON c.StateProvinceID = s.StateProvinceID
+LEFT JOIN countries AS co 
+        ON s.CountryID = co.CountryID
+        );
+      
+  

@@ -1,13 +1,15 @@
 
-  create or replace   view WideWorldImportersDW.dwh.src_invoices
+  create or replace   view WideWorldImportersDW.src.src_invoices
   
    as (
-    WITH invoices AS (
-    SELECT *
-    FROM src.invoices
-)
-
-SELECT *
+    
+
+WITH invoices AS (
+    SELECT *
+    FROM src.invoices
+)
+
+SELECT *
 FROM invoices
   );
 
