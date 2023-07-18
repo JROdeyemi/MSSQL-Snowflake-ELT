@@ -35,8 +35,7 @@ SELECT i.InvoiceID,
         il.TaxRate,
         il.TaxAmount,
         il.LineProfit,
-        il.ExtendedPrice,
-        i.LastEditedWhen AS DateCreated
+        il.ExtendedPrice
 FROM invoices AS i 
 LEFT JOIN invoicelines AS il 
         ON i.invoiceid = il.invoiceid
