@@ -24359,3 +24359,297 @@ CALL dwh.LoadAllDataWarehouseTables();
 [0m11:46:40.501216 [debug] [MainThread]: Connection 'macro_LoadDataWarehouse' was properly closed.
 [0m11:46:40.503767 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000186556FB5E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001865A91E6B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001865A877EB0>]}
 [0m11:46:40.504874 [debug] [MainThread]: Flushing usage events
+[0m11:52:40.323091 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E5FD4B5E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E5F5DC400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E5F5DC220>]}
+
+
+============================== 11:52:40.342005 | bfdd1639-c36b-45f3-82ae-677493960fa4 ==============================
+[0m11:52:40.342005 [info ] [MainThread]: Running with dbt=1.5.2
+[0m11:52:40.348323 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\USER\\Documents\\MSSQL-Snowflake-DBT\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\USER\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m11:52:43.433615 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bfdd1639-c36b-45f3-82ae-677493960fa4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E5F587D30>]}
+[0m11:52:43.491750 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bfdd1639-c36b-45f3-82ae-677493960fa4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E64F62A10>]}
+[0m11:52:43.498108 [info ] [MainThread]: Registered adapter: snowflake=1.5.2
+[0m11:52:43.608551 [debug] [MainThread]: checksum: 2435fa7be9fcfa6ffe15da8f202ddc09867bf7d6308330064299ccb85c8646b5, vars: {}, profile: , target: , version: 1.5.2
+[0m11:52:43.902903 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:52:43.902903 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:52:43.905801 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.WideWordImportersDW.warehouse
+- models.WideWordImportersDW.source
+- models.WideWordImportersDW.staging
+[0m11:52:43.925252 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bfdd1639-c36b-45f3-82ae-677493960fa4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E65129E10>]}
+[0m11:52:43.930980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bfdd1639-c36b-45f3-82ae-677493960fa4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E650F81C0>]}
+[0m11:52:43.932551 [info ] [MainThread]: Found 17 models, 0 tests, 0 snapshots, 0 analyses, 324 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[0m11:52:43.935590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bfdd1639-c36b-45f3-82ae-677493960fa4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E650FA920>]}
+[0m11:52:43.942669 [info ] [MainThread]: 
+[0m11:52:43.945063 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m11:52:43.949211 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WideWorldImportersDW_stg'
+[0m11:52:43.950001 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WideWorldImportersDW_src'
+[0m11:52:43.991332 [debug] [ThreadPool]: Using snowflake connection "list_WideWorldImportersDW_stg"
+[0m11:52:43.994632 [debug] [ThreadPool]: Using snowflake connection "list_WideWorldImportersDW_src"
+[0m11:52:43.999854 [debug] [ThreadPool]: On list_WideWorldImportersDW_stg: /* {"app": "dbt", "dbt_version": "1.5.2", "profile_name": "WideWorldImportersDW", "target_name": "dev", "connection_name": "list_WideWorldImportersDW_stg"} */
+show terse objects in WideWorldImportersDW.stg
+[0m11:52:44.002308 [debug] [ThreadPool]: On list_WideWorldImportersDW_src: /* {"app": "dbt", "dbt_version": "1.5.2", "profile_name": "WideWorldImportersDW", "target_name": "dev", "connection_name": "list_WideWorldImportersDW_src"} */
+show terse objects in WideWorldImportersDW.src
+[0m11:52:44.004531 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:52:44.007901 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:52:46.376293 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 2.0 seconds
+[0m11:52:46.393599 [debug] [ThreadPool]: On list_WideWorldImportersDW_stg: Close
+[0m11:52:46.421536 [debug] [ThreadPool]: SQL status: SUCCESS 24 in 2.0 seconds
+[0m11:52:46.453782 [debug] [ThreadPool]: On list_WideWorldImportersDW_src: Close
+[0m11:52:46.960508 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bfdd1639-c36b-45f3-82ae-677493960fa4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E65128B80>]}
+[0m11:52:46.968477 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m11:52:46.975872 [info ] [MainThread]: 
+[0m11:52:47.025293 [debug] [Thread-1 (]: Began running node model.WideWorldImportersDW.src_Buyinggroups
+[0m11:52:47.027081 [debug] [Thread-2 (]: Began running node model.WideWorldImportersDW.src_Cities
+[0m11:52:47.028079 [debug] [Thread-3 (]: Began running node model.WideWorldImportersDW.src_Colors
+[0m11:52:47.029076 [debug] [Thread-4 (]: Began running node model.WideWorldImportersDW.src_Countries
+[0m11:52:47.029868 [debug] [Thread-5 (]: Began running node model.WideWorldImportersDW.src_Customers
+[0m11:52:47.030865 [debug] [Thread-6 (]: Began running node model.WideWorldImportersDW.src_PackageTypes
+[0m11:52:47.031393 [debug] [Thread-7 (]: Began running node model.WideWorldImportersDW.src_StockItems
+[0m11:52:47.033395 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.WideWorldImportersDW.src_Buyinggroups'
+[0m11:52:47.039016 [debug] [Thread-8 (]: Began running node model.WideWorldImportersDW.src_customercategories
+[0m11:52:47.042730 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.WideWorldImportersDW.src_Cities'
+[0m11:52:47.044749 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.WideWorldImportersDW.src_Colors'
+[0m11:52:47.045644 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.WideWorldImportersDW.src_Countries'
+[0m11:52:47.048131 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.WideWorldImportersDW.src_Customers'
+[0m11:52:47.049130 [debug] [Thread-6 (]: Acquiring new snowflake connection 'model.WideWorldImportersDW.src_PackageTypes'
+[0m11:52:47.055601 [debug] [Thread-7 (]: Acquiring new snowflake connection 'model.WideWorldImportersDW.src_StockItems'
+[0m11:52:47.057597 [debug] [Thread-1 (]: Began compiling node model.WideWorldImportersDW.src_Buyinggroups
+[0m11:52:47.059597 [debug] [Thread-8 (]: Acquiring new snowflake connection 'model.WideWorldImportersDW.src_customercategories'
+[0m11:52:47.060460 [debug] [Thread-2 (]: Began compiling node model.WideWorldImportersDW.src_Cities
+[0m11:52:47.061460 [debug] [Thread-3 (]: Began compiling node model.WideWorldImportersDW.src_Colors
+[0m11:52:47.062458 [debug] [Thread-4 (]: Began compiling node model.WideWorldImportersDW.src_Countries
+[0m11:52:47.064937 [debug] [Thread-5 (]: Began compiling node model.WideWorldImportersDW.src_Customers
+[0m11:52:47.067482 [debug] [Thread-6 (]: Began compiling node model.WideWorldImportersDW.src_PackageTypes
+[0m11:52:47.073304 [debug] [Thread-7 (]: Began compiling node model.WideWorldImportersDW.src_StockItems
+[0m11:52:47.079942 [debug] [Thread-1 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_Buyinggroups"
+[0m11:52:47.086044 [debug] [Thread-8 (]: Began compiling node model.WideWorldImportersDW.src_customercategories
+[0m11:52:47.186640 [debug] [Thread-2 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_Cities"
+[0m11:52:47.196579 [debug] [Thread-3 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_Colors"
+[0m11:52:47.206944 [debug] [Thread-4 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_Countries"
+[0m11:52:47.216446 [debug] [Thread-5 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_Customers"
+[0m11:52:47.226723 [debug] [Thread-6 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_PackageTypes"
+[0m11:52:47.235007 [debug] [Thread-7 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_StockItems"
+[0m11:52:47.245358 [debug] [Thread-8 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_customercategories"
+[0m11:52:47.247743 [debug] [Thread-1 (]: Timing info for model.WideWorldImportersDW.src_Buyinggroups (compile): 11:52:47.074872 => 11:52:47.246743
+[0m11:52:47.251036 [debug] [Thread-3 (]: Timing info for model.WideWorldImportersDW.src_Colors (compile): 11:52:47.187388 => 11:52:47.249851
+[0m11:52:47.253037 [debug] [Thread-5 (]: Timing info for model.WideWorldImportersDW.src_Customers (compile): 11:52:47.207949 => 11:52:47.253037
+[0m11:52:47.253037 [debug] [Thread-2 (]: Timing info for model.WideWorldImportersDW.src_Cities (compile): 11:52:47.089137 => 11:52:47.253037
+[0m11:52:47.257054 [debug] [Thread-6 (]: Timing info for model.WideWorldImportersDW.src_PackageTypes (compile): 11:52:47.217287 => 11:52:47.257054
+[0m11:52:47.260494 [debug] [Thread-4 (]: Timing info for model.WideWorldImportersDW.src_Countries (compile): 11:52:47.197744 => 11:52:47.260494
+[0m11:52:47.263494 [debug] [Thread-7 (]: Timing info for model.WideWorldImportersDW.src_StockItems (compile): 11:52:47.227730 => 11:52:47.262494
+[0m11:52:47.265001 [debug] [Thread-1 (]: Began executing node model.WideWorldImportersDW.src_Buyinggroups
+[0m11:52:47.267383 [debug] [Thread-8 (]: Timing info for model.WideWorldImportersDW.src_customercategories (compile): 11:52:47.235007 => 11:52:47.266383
+[0m11:52:47.269384 [debug] [Thread-3 (]: Began executing node model.WideWorldImportersDW.src_Colors
+[0m11:52:47.270647 [debug] [Thread-5 (]: Began executing node model.WideWorldImportersDW.src_Customers
+[0m11:52:47.272139 [debug] [Thread-2 (]: Began executing node model.WideWorldImportersDW.src_Cities
+[0m11:52:47.274365 [debug] [Thread-6 (]: Began executing node model.WideWorldImportersDW.src_PackageTypes
+[0m11:52:47.276364 [debug] [Thread-4 (]: Began executing node model.WideWorldImportersDW.src_Countries
+[0m11:52:47.278130 [debug] [Thread-7 (]: Began executing node model.WideWorldImportersDW.src_StockItems
+[0m11:52:47.280136 [debug] [Thread-1 (]: Timing info for model.WideWorldImportersDW.src_Buyinggroups (execute): 11:52:47.279135 => 11:52:47.279135
+[0m11:52:47.282587 [debug] [Thread-8 (]: Began executing node model.WideWorldImportersDW.src_customercategories
+[0m11:52:47.284872 [debug] [Thread-3 (]: Timing info for model.WideWorldImportersDW.src_Colors (execute): 11:52:47.283876 => 11:52:47.283876
+[0m11:52:47.287798 [debug] [Thread-5 (]: Timing info for model.WideWorldImportersDW.src_Customers (execute): 11:52:47.286178 => 11:52:47.286178
+[0m11:52:47.289003 [debug] [Thread-2 (]: Timing info for model.WideWorldImportersDW.src_Cities (execute): 11:52:47.289003 => 11:52:47.289003
+[0m11:52:47.291922 [debug] [Thread-6 (]: Timing info for model.WideWorldImportersDW.src_PackageTypes (execute): 11:52:47.291081 => 11:52:47.291081
+[0m11:52:47.294190 [debug] [Thread-4 (]: Timing info for model.WideWorldImportersDW.src_Countries (execute): 11:52:47.293067 => 11:52:47.293067
+[0m11:52:47.295794 [debug] [Thread-7 (]: Timing info for model.WideWorldImportersDW.src_StockItems (execute): 11:52:47.295516 => 11:52:47.295516
+[0m11:52:47.300090 [debug] [Thread-1 (]: Finished running node model.WideWorldImportersDW.src_Buyinggroups
+[0m11:52:47.302404 [debug] [Thread-8 (]: Timing info for model.WideWorldImportersDW.src_customercategories (execute): 11:52:47.301400 => 11:52:47.301400
+[0m11:52:47.306360 [debug] [Thread-3 (]: Finished running node model.WideWorldImportersDW.src_Colors
+[0m11:52:47.310060 [debug] [Thread-5 (]: Finished running node model.WideWorldImportersDW.src_Customers
+[0m11:52:47.313798 [debug] [Thread-2 (]: Finished running node model.WideWorldImportersDW.src_Cities
+[0m11:52:47.318292 [debug] [Thread-6 (]: Finished running node model.WideWorldImportersDW.src_PackageTypes
+[0m11:52:47.321846 [debug] [Thread-4 (]: Finished running node model.WideWorldImportersDW.src_Countries
+[0m11:52:47.326359 [debug] [Thread-7 (]: Finished running node model.WideWorldImportersDW.src_StockItems
+[0m11:52:47.327388 [debug] [Thread-1 (]: Began running node model.WideWorldImportersDW.src_invoicelines
+[0m11:52:47.332063 [debug] [Thread-8 (]: Finished running node model.WideWorldImportersDW.src_customercategories
+[0m11:52:47.334098 [debug] [Thread-3 (]: Began running node model.WideWorldImportersDW.src_invoices
+[0m11:52:47.336099 [debug] [Thread-5 (]: Began running node model.WideWorldImportersDW.src_people
+[0m11:52:47.338098 [debug] [Thread-2 (]: Began running node model.WideWorldImportersDW.src_stateprovinces
+[0m11:52:47.341859 [debug] [Thread-6 (]: Began running node model.WideWorldImportersDW.stgDimStockItem
+[0m11:52:47.344014 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.WideWorldImportersDW.src_Buyinggroups, now model.WideWorldImportersDW.src_invoicelines)
+[0m11:52:47.347094 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.WideWorldImportersDW.src_Colors, now model.WideWorldImportersDW.src_invoices)
+[0m11:52:47.350084 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.WideWorldImportersDW.src_Customers, now model.WideWorldImportersDW.src_people)
+[0m11:52:47.352586 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.WideWorldImportersDW.src_Cities, now model.WideWorldImportersDW.src_stateprovinces)
+[0m11:52:47.355446 [debug] [Thread-6 (]: Re-using an available connection from the pool (formerly model.WideWorldImportersDW.src_PackageTypes, now model.WideWorldImportersDW.stgDimStockItem)
+[0m11:52:47.357684 [debug] [Thread-1 (]: Began compiling node model.WideWorldImportersDW.src_invoicelines
+[0m11:52:47.359744 [debug] [Thread-3 (]: Began compiling node model.WideWorldImportersDW.src_invoices
+[0m11:52:47.360992 [debug] [Thread-5 (]: Began compiling node model.WideWorldImportersDW.src_people
+[0m11:52:47.362731 [debug] [Thread-2 (]: Began compiling node model.WideWorldImportersDW.src_stateprovinces
+[0m11:52:47.365192 [debug] [Thread-6 (]: Began compiling node model.WideWorldImportersDW.stgDimStockItem
+[0m11:52:47.372825 [debug] [Thread-1 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_invoicelines"
+[0m11:52:47.385894 [debug] [Thread-3 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_invoices"
+[0m11:52:47.397900 [debug] [Thread-5 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_people"
+[0m11:52:47.409542 [debug] [Thread-2 (]: Writing injected SQL for node "model.WideWorldImportersDW.src_stateprovinces"
+[0m11:52:47.422704 [debug] [Thread-6 (]: Writing injected SQL for node "model.WideWorldImportersDW.stgDimStockItem"
+[0m11:52:47.427531 [debug] [Thread-1 (]: Timing info for model.WideWorldImportersDW.src_invoicelines (compile): 11:52:47.366783 => 11:52:47.426530
+[0m11:52:47.429868 [debug] [Thread-3 (]: Timing info for model.WideWorldImportersDW.src_invoices (compile): 11:52:47.376756 => 11:52:47.428864
+[0m11:52:47.431918 [debug] [Thread-5 (]: Timing info for model.WideWorldImportersDW.src_people (compile): 11:52:47.387143 => 11:52:47.429868
+[0m11:52:47.434797 [debug] [Thread-2 (]: Timing info for model.WideWorldImportersDW.src_stateprovinces (compile): 11:52:47.400656 => 11:52:47.433797
+[0m11:52:47.435816 [debug] [Thread-1 (]: Began executing node model.WideWorldImportersDW.src_invoicelines
+[0m11:52:47.438287 [debug] [Thread-6 (]: Timing info for model.WideWorldImportersDW.stgDimStockItem (compile): 11:52:47.411034 => 11:52:47.437286
+[0m11:52:47.439288 [debug] [Thread-3 (]: Began executing node model.WideWorldImportersDW.src_invoices
+[0m11:52:47.441612 [debug] [Thread-5 (]: Began executing node model.WideWorldImportersDW.src_people
+[0m11:52:47.444608 [debug] [Thread-2 (]: Began executing node model.WideWorldImportersDW.src_stateprovinces
+[0m11:52:47.446975 [debug] [Thread-1 (]: Timing info for model.WideWorldImportersDW.src_invoicelines (execute): 11:52:47.446610 => 11:52:47.446610
+[0m11:52:47.448631 [debug] [Thread-6 (]: Began executing node model.WideWorldImportersDW.stgDimStockItem
+[0m11:52:47.451396 [debug] [Thread-3 (]: Timing info for model.WideWorldImportersDW.src_invoices (execute): 11:52:47.450397 => 11:52:47.450397
+[0m11:52:47.454099 [debug] [Thread-5 (]: Timing info for model.WideWorldImportersDW.src_people (execute): 11:52:47.452727 => 11:52:47.452727
+[0m11:52:47.456094 [debug] [Thread-2 (]: Timing info for model.WideWorldImportersDW.src_stateprovinces (execute): 11:52:47.455104 => 11:52:47.455104
+[0m11:52:47.460301 [debug] [Thread-1 (]: Finished running node model.WideWorldImportersDW.src_invoicelines
+[0m11:52:47.462395 [debug] [Thread-6 (]: Timing info for model.WideWorldImportersDW.stgDimStockItem (execute): 11:52:47.461389 => 11:52:47.461389
+[0m11:52:47.466811 [debug] [Thread-3 (]: Finished running node model.WideWorldImportersDW.src_invoices
+[0m11:52:47.471518 [debug] [Thread-5 (]: Finished running node model.WideWorldImportersDW.src_people
+[0m11:52:47.476116 [debug] [Thread-2 (]: Finished running node model.WideWorldImportersDW.src_stateprovinces
+[0m11:52:47.483041 [debug] [Thread-6 (]: Finished running node model.WideWorldImportersDW.stgDimStockItem
+[0m11:52:47.485632 [debug] [Thread-7 (]: Began running node model.WideWorldImportersDW.stgFactSales
+[0m11:52:47.487630 [debug] [Thread-8 (]: Began running node model.WideWorldImportersDW.stgDimCustomer
+[0m11:52:47.487630 [debug] [Thread-1 (]: Began running node model.WideWorldImportersDW.stgDimEmployee
+[0m11:52:47.488829 [debug] [Thread-4 (]: Began running node model.WideWorldImportersDW.stgDimCity
+[0m11:52:47.490305 [debug] [Thread-7 (]: Re-using an available connection from the pool (formerly model.WideWorldImportersDW.src_StockItems, now model.WideWorldImportersDW.stgFactSales)
+[0m11:52:47.492045 [debug] [Thread-8 (]: Re-using an available connection from the pool (formerly model.WideWorldImportersDW.src_customercategories, now model.WideWorldImportersDW.stgDimCustomer)
+[0m11:52:47.493337 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.WideWorldImportersDW.src_invoicelines, now model.WideWorldImportersDW.stgDimEmployee)
+[0m11:52:47.494693 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.WideWorldImportersDW.src_Countries, now model.WideWorldImportersDW.stgDimCity)
+[0m11:52:47.495783 [debug] [Thread-7 (]: Began compiling node model.WideWorldImportersDW.stgFactSales
+[0m11:52:47.496877 [debug] [Thread-8 (]: Began compiling node model.WideWorldImportersDW.stgDimCustomer
+[0m11:52:47.497876 [debug] [Thread-1 (]: Began compiling node model.WideWorldImportersDW.stgDimEmployee
+[0m11:52:47.498877 [debug] [Thread-4 (]: Began compiling node model.WideWorldImportersDW.stgDimCity
+[0m11:52:47.506077 [debug] [Thread-7 (]: Writing injected SQL for node "model.WideWorldImportersDW.stgFactSales"
+[0m11:52:47.512094 [debug] [Thread-8 (]: Writing injected SQL for node "model.WideWorldImportersDW.stgDimCustomer"
+[0m11:52:47.518271 [debug] [Thread-1 (]: Writing injected SQL for node "model.WideWorldImportersDW.stgDimEmployee"
+[0m11:52:47.525214 [debug] [Thread-4 (]: Writing injected SQL for node "model.WideWorldImportersDW.stgDimCity"
+[0m11:52:47.529860 [debug] [Thread-7 (]: Timing info for model.WideWorldImportersDW.stgFactSales (compile): 11:52:47.499879 => 11:52:47.529860
+[0m11:52:47.532041 [debug] [Thread-8 (]: Timing info for model.WideWorldImportersDW.stgDimCustomer (compile): 11:52:47.506077 => 11:52:47.531037
+[0m11:52:47.532775 [debug] [Thread-7 (]: Began executing node model.WideWorldImportersDW.stgFactSales
+[0m11:52:47.534880 [debug] [Thread-1 (]: Timing info for model.WideWorldImportersDW.stgDimEmployee (compile): 11:52:47.513081 => 11:52:47.533880
+[0m11:52:47.535392 [debug] [Thread-8 (]: Began executing node model.WideWorldImportersDW.stgDimCustomer
+[0m11:52:47.537393 [debug] [Thread-4 (]: Timing info for model.WideWorldImportersDW.stgDimCity (compile): 11:52:47.520191 => 11:52:47.536392
+[0m11:52:47.538392 [debug] [Thread-7 (]: Timing info for model.WideWorldImportersDW.stgFactSales (execute): 11:52:47.537393 => 11:52:47.537393
+[0m11:52:47.539232 [debug] [Thread-1 (]: Began executing node model.WideWorldImportersDW.stgDimEmployee
+[0m11:52:47.540234 [debug] [Thread-8 (]: Timing info for model.WideWorldImportersDW.stgDimCustomer (execute): 11:52:47.539232 => 11:52:47.539232
+[0m11:52:47.541009 [debug] [Thread-4 (]: Began executing node model.WideWorldImportersDW.stgDimCity
+[0m11:52:47.542010 [debug] [Thread-7 (]: Finished running node model.WideWorldImportersDW.stgFactSales
+[0m11:52:47.543631 [debug] [Thread-1 (]: Timing info for model.WideWorldImportersDW.stgDimEmployee (execute): 11:52:47.543631 => 11:52:47.543631
+[0m11:52:47.545685 [debug] [Thread-8 (]: Finished running node model.WideWorldImportersDW.stgDimCustomer
+[0m11:52:47.546687 [debug] [Thread-4 (]: Timing info for model.WideWorldImportersDW.stgDimCity (execute): 11:52:47.546687 => 11:52:47.546687
+[0m11:52:47.548828 [debug] [Thread-1 (]: Finished running node model.WideWorldImportersDW.stgDimEmployee
+[0m11:52:47.551958 [debug] [Thread-4 (]: Finished running node model.WideWorldImportersDW.stgDimCity
+[0m11:52:47.553658 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:52:47.554661 [debug] [MainThread]: Connection 'list_WideWorldImportersDW_stg' was properly closed.
+[0m11:52:47.555851 [debug] [MainThread]: Connection 'list_WideWorldImportersDW_src' was properly closed.
+[0m11:52:47.555851 [debug] [MainThread]: Connection 'model.WideWorldImportersDW.stgDimEmployee' was properly closed.
+[0m11:52:47.557209 [debug] [MainThread]: Connection 'model.WideWorldImportersDW.src_stateprovinces' was properly closed.
+[0m11:52:47.557209 [debug] [MainThread]: Connection 'model.WideWorldImportersDW.src_invoices' was properly closed.
+[0m11:52:47.558623 [debug] [MainThread]: Connection 'model.WideWorldImportersDW.stgDimCity' was properly closed.
+[0m11:52:47.558623 [debug] [MainThread]: Connection 'model.WideWorldImportersDW.src_people' was properly closed.
+[0m11:52:47.559981 [debug] [MainThread]: Connection 'model.WideWorldImportersDW.stgDimStockItem' was properly closed.
+[0m11:52:47.560990 [debug] [MainThread]: Connection 'model.WideWorldImportersDW.stgFactSales' was properly closed.
+[0m11:52:47.562294 [debug] [MainThread]: Connection 'model.WideWorldImportersDW.stgDimCustomer' was properly closed.
+[0m11:52:47.569229 [debug] [MainThread]: Command end result
+[0m11:52:47.596914 [debug] [MainThread]: Acquiring new snowflake connection 'generate_catalog'
+[0m11:52:47.598140 [info ] [MainThread]: Building catalog
+[0m11:52:47.611064 [debug] [ThreadPool]: Acquiring new snowflake connection 'WideWorldImportersDW.information_schema'
+[0m11:52:47.645969 [debug] [ThreadPool]: Using snowflake connection "WideWorldImportersDW.information_schema"
+[0m11:52:47.648055 [debug] [ThreadPool]: On WideWorldImportersDW.information_schema: /* {"app": "dbt", "dbt_version": "1.5.2", "profile_name": "WideWorldImportersDW", "target_name": "dev", "connection_name": "WideWorldImportersDW.information_schema"} */
+with tables as (
+
+          select
+              table_catalog as "table_database",
+              table_schema as "table_schema",
+              table_name as "table_name",
+              table_type as "table_type",
+              comment as "table_comment",
+
+              -- note: this is the _role_ that owns the table
+              table_owner as "table_owner",
+
+              'Clustering Key' as "stats:clustering_key:label",
+              clustering_key as "stats:clustering_key:value",
+              'The key used to cluster this table' as "stats:clustering_key:description",
+              (clustering_key is not null) as "stats:clustering_key:include",
+
+              'Row Count' as "stats:row_count:label",
+              row_count as "stats:row_count:value",
+              'An approximate count of rows in this table' as "stats:row_count:description",
+              (row_count is not null) as "stats:row_count:include",
+
+              'Approximate Size' as "stats:bytes:label",
+              bytes as "stats:bytes:value",
+              'Approximate size of the table as reported by Snowflake' as "stats:bytes:description",
+              (bytes is not null) as "stats:bytes:include",
+
+              'Last Modified' as "stats:last_modified:label",
+              to_varchar(convert_timezone('UTC', last_altered), 'yyyy-mm-dd HH24:MI'||'UTC') as "stats:last_modified:value",
+              'The timestamp for last update/change' as "stats:last_modified:description",
+              (last_altered is not null and table_type='BASE TABLE') as "stats:last_modified:include"
+
+          from WideWorldImportersDW.INFORMATION_SCHEMA.tables
+
+      ),
+
+      columns as (
+
+          select
+              table_catalog as "table_database",
+              table_schema as "table_schema",
+              table_name as "table_name",
+
+              column_name as "column_name",
+              ordinal_position as "column_index",
+              data_type as "column_type",
+              comment as "column_comment"
+
+          from WideWorldImportersDW.INFORMATION_SCHEMA.columns
+      )
+
+      select *
+      from tables
+      join columns using ("table_database", "table_schema", "table_name")
+      where (upper("table_schema") = upper('stg') or upper("table_schema") = upper('src'))
+      order by "column_index"
+[0m11:52:47.649053 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:52:51.186456 [debug] [ThreadPool]: SQL status: SUCCESS 380 in 4.0 seconds
+[0m11:52:54.835259 [debug] [ThreadPool]: On WideWorldImportersDW.information_schema: Close
+[0m11:52:55.573517 [info ] [MainThread]: Catalog written to C:\Users\USER\Documents\MSSQL-Snowflake-DBT\target\catalog.json
+[0m11:52:55.578932 [debug] [MainThread]: Command `dbt docs generate` succeeded at 11:52:55.577856 after 15.32 seconds
+[0m11:52:55.581759 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m11:52:55.584186 [debug] [MainThread]: Connection 'WideWorldImportersDW.information_schema' was properly closed.
+[0m11:52:55.586815 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E5FD4B5E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E5F587D30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E64F62A10>]}
+[0m11:52:55.588794 [debug] [MainThread]: Flushing usage events
+[0m11:54:33.410976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002242C04B5E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002242B8F42E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002242B8F4130>]}
+
+
+============================== 11:54:33.419627 | b429179e-2e88-468e-9f77-dfb24f835f5f ==============================
+[0m11:54:33.419627 [info ] [MainThread]: Running with dbt=1.5.2
+[0m11:54:33.422462 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\USER\\Documents\\MSSQL-Snowflake-DBT\\logs', 'profiles_dir': 'C:\\Users\\USER\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m11:54:35.359680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b429179e-2e88-468e-9f77-dfb24f835f5f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002242B897F70>]}
+[0m11:54:35.382453 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b429179e-2e88-468e-9f77-dfb24f835f5f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002243126E770>]}
+[0m11:59:16.161965 [error] [MainThread]: Encountered an error:
+
+[0m11:59:16.198397 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\USER\anaconda3\lib\site-packages\dbt\cli\requires.py", line 86, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\USER\anaconda3\lib\site-packages\dbt\cli\requires.py", line 71, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\USER\anaconda3\lib\site-packages\dbt\cli\requires.py", line 142, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\USER\anaconda3\lib\site-packages\dbt\cli\requires.py", line 168, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\USER\anaconda3\lib\site-packages\dbt\cli\requires.py", line 215, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\USER\anaconda3\lib\site-packages\dbt\cli\main.py", line 299, in docs_serve
+    results = task.run()
+  File "C:\Users\USER\anaconda3\lib\site-packages\dbt\task\serve.py", line 28, in run
+    httpd.serve_forever()
+  File "C:\Users\USER\anaconda3\lib\socketserver.py", line 232, in serve_forever
+    ready = selector.select(poll_interval)
+  File "C:\Users\USER\anaconda3\lib\selectors.py", line 324, in select
+    r, w, _ = self._select(self._readers, self._writers, [], timeout)
+  File "C:\Users\USER\anaconda3\lib\selectors.py", line 315, in _select
+    r, w, x = select.select(r, w, w, timeout)
+KeyboardInterrupt
+
+[0m11:59:16.240519 [debug] [MainThread]: Command `dbt docs serve` failed at 11:59:16.237956 after 282.90 seconds
+[0m11:59:16.246110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002242C04B5E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002243126F9A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002243126FA00>]}
+[0m11:59:16.251276 [debug] [MainThread]: Flushing usage events
