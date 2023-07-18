@@ -30,14 +30,18 @@ Before running this ELT pipeline, ensure the following dependencies are met:
    ~~~
 
 2. Install the required Python Packages
+   ~~~
    pip install -r requirements.txt
+   ~~~
 
 3. Update the configuration
    Remember to change the connection settings to your local MSSQL Server connections
    Remember to change that of the Snowflake connection as well.
 
 4. Run the ELT Pipeline
+   ~~~
    python automate_project.py
+   ~~~
 
 # Customization
 
