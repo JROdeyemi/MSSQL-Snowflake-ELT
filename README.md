@@ -24,8 +24,10 @@ Before running this ELT pipeline, ensure the following dependencies are met:
 # Getting Started
 
 1. Clone the repository to your local machine.
+   ~~~
    git clone https://github.com/JROdeyemi/MSSQL-Snowflake-ELT.git
    cd MSSQL-Snowflake-ELT
+   ~~~
 
 2. Install the required Python Packages
    pip install -r requirements.txt
